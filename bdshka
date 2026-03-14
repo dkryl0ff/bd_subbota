@@ -1,0 +1,8 @@
+CREATE table Product(id SERIAL Primary key, name varchar(50), ed varchar(20))
+
+CREATE table Client(id SERIAL Primary key, name varchar(50), adress varchar(50), phone varchar(50))
+
+
+CREATE table Futura(id SERIAL Primary key, idclient integer, data date, totalsum float(50),FOREIGN KEY(idclient) REFERENCES Client(id))
+
+CREATE table FuturaInfo(id SERIAL Primary key, idfutura integer, idproduct integer, quantity float(50), price float(50), FOREIGN KEY(idfutura) REFERENCES Futura(id), FOREIGN KEY(idproduct) REFERENCES Product(id))
